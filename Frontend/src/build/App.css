@@ -1,0 +1,197 @@
+:root {
+  --prim: #fff9ec;
+  --second: #fb6376;
+  --third: #5d2a42;
+  --proj: #fcb1a6;
+}
+
+.active {
+  background-color: var(--success);
+}
+
+.inactive {
+  background-color: var(--failure);
+}
+
+.row {
+  margin: 15px 0;
+}
+
+.valid {
+  border: 2px solid var(--success);
+}
+
+.invalid {
+  border: 2px solid var(--danger);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-animation: shake-anim 0.4s;
+          animation: shake-anim 0.4s;
+}
+
+.Homepage {
+  height: 100vh;
+  background: var(--prim);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.Homepage .navbar {
+  background-color: var(--third);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+}
+
+.Homepage .title {
+  color: var(--third);
+  margin: 15px 0;
+}
+
+#login {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--second);
+}
+
+.projects {
+  width: 850px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  scroll-behavior: smooth;
+}
+
+.projects .forward,
+.projects .backward {
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 0px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-image: url("../img/left_arrow.svg");
+  background-size: contain;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.3;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.projects .forward:hover,
+.projects .backward:hover {
+  opacity: 1;
+}
+
+.projects .forward:active,
+.projects .backward:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.projects .backward {
+  left: 93%;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.projects .project {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 800px;
+  height: 300px;
+  margin: 0 5vw;
+  border-radius: 10px;
+  -webkit-transition: left 0.4s ease;
+  transition: left 0.4s ease;
+  text-align: center;
+  background-color: var(--proj);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects .project .title,
+.projects .project .time {
+  margin: 20px 0;
+  color: crimson;
+}
+
+.projects .project .title::before,
+.projects .project .time::before {
+  color: white;
+  content: "Project: ";
+}
+
+@-webkit-keyframes shake-anim {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  70% {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes shake-anim {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  70% {
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=App.css.map */

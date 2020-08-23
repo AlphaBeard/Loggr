@@ -1,0 +1,126 @@
+:root {
+    --prim: #fff9ec;
+    --second: #fb6376;
+    --third: #5d2a42;
+    --proj: #fcb1a6;
+}
+.App {
+}
+.active {
+    background-color: var(--success);
+}
+.inactive {
+    background-color: var(--failure);
+}
+
+.row {
+    margin: 15px 0;
+}
+.valid {
+    border: 2px solid var(--success);
+}
+.invalid {
+    border: 2px solid var(--danger);
+    transition: 0.4s;
+    animation: shake-anim 0.4s;
+}
+.Homepage {
+    .navbar {
+        background-color: var(--third);
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100px;
+    }
+    .title{
+        color: var(--third);
+        margin: 15px 0;
+    }
+    height: 100vh;
+    background: var(--prim);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#login {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--second);
+}
+
+.projects {
+    width: 850px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    // overflow: hidden;
+    scroll-behavior: smooth;
+    .forward,
+    .backward {
+        border-radius: 50%;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 0px;
+        align-self: center;
+        background-image: url("../img/left_arrow.svg");
+        background-size: contain;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        opacity: 0.3;
+        transition: opacity 0.2s;
+        &:hover {
+            opacity: 1;
+        }
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+    .backward {
+        left: 93%;
+        transform: scaleX(-1);
+    }
+    .project {
+        // position: absolute;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 800px;
+        height: 300px;
+        margin: 0 5vw;
+        border-radius: 10px;
+        transition: left 0.4s ease;
+        text-align: center;
+        background-color: var(--proj);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title,
+        .time {
+            margin: 20px 0;
+            color: crimson;
+            &::before {
+                color: white;
+                content: "Project: ";
+            }
+        }
+    }
+}
+
+//Animations
+@keyframes shake-anim {
+    0% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(30px);
+    }
+    70% {
+        transform: translateX(-30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
